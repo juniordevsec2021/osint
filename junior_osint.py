@@ -13,7 +13,6 @@ import sys
 import nmap3
 import os
 from pyngrok import ngrok
-from os import path
 
 os.system('sudo service tor start')
 
