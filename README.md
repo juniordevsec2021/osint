@@ -7,7 +7,6 @@ osint tool
 * run the program with the command python3 junior_osint.py
 
 # about the options: 
-*
 * [1]ahmia search (search in ahmia.fi)
 * [2]find emails (scrape emails with in .onion or clearnet sites)
 * [3]email sender (send single or mass emails)
